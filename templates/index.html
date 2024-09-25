@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Student Report Lookup</h1>
+        <form action="/student" method="post" class="mt-3">
+            <div class="form-group">
+                <label for="student_id">Enter Student ID:</label>
+                <input type="number" class="form-control" id="student_id" name="student_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Report</button>
+        </form>
+        <form action="/top5" method="get" class="mt-3">
+            <button type="submit" class="btn btn-secondary">Show Top 5 Students</button>
+        </form>
+        <form action="/failures" method="get" class="mt-3">
+            <button type="submit" class="btn btn-danger">Show Failed Students</button>
+        </form>
+        <form action="/distributions" method="get" class="mt-3">
+            <button type="submit" class="btn btn-info">Show Score Distributions</button>
+        </form>
+    </div>
+</body>
+</html>

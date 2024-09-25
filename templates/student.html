@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report</title>
+    <style>
+        .image-container {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='student.png') }}" alt="Student Image">
+        </div>
+        <h1 class="mt-5">Student Report</h1>
+        {% if error %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% else %}
+            <table class="table table-bordered mt-3">
+                <tbody>
+                    <tr>
+                        <th scope="row">Student ID</th>
+                        <td>{{ student['ID'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Gender</th>
+                        <td>{{ student['gender'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ethnicity</th>
+                        <td>{{ student['race/ethnicity'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Parental Level of Education</th>
+                        <td>{{ student['parental level of education'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Test Preparation Course</th>
+                        <td>{{ student['test preparation course'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Math Score</th>
+                        <td>{{ student['math score'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Reading Score</th>
+                        <td>{{ student['reading score'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Writing Score</th>
+                        <td>{{ student['writing score'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Score</th>
+                        <td>{{ student['TotalScore'] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Percentage</th>
+                        <td>{{ student['Percentage'] }}%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Class Rank</th>
+                        <td>{{ student['Rank'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>

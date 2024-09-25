@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Distributions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Score Distributions</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Math Score Distribution</h3>
+                <img src="{{ distributions['math_score'] }}" class="img-fluid">
+                <p>Mean: {{ statistics['math_score_mean'] }}</p>
+                <p>Top 10%: {{ statistics['math_score_top_10'] }}</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Reading Score Distribution</h3>
+                <img src="{{ distributions['reading_score'] }}" class="img-fluid">
+                <p>Mean: {{ statistics['reading_score_mean'] }}</p>
+                <p>Top 10%: {{ statistics['reading_score_top_10'] }}</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Writing Score Distribution</h3>
+                <img src="{{ distributions['writing_score'] }}" class="img-fluid">
+                <p>Mean: {{ statistics['writing_score_mean'] }}</p>
+                <p>Top 10%: {{ statistics['writing_score_top_10'] }}</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Total Score Distribution</h3>
+                <img src="{{ distributions['total_score'] }}" class="img-fluid">
+                <p>Mean: {{ statistics['total_score_mean'] }}</p>
+                <p>Top 10%: {{ statistics['total_score_top_10'] }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
