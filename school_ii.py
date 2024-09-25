@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('Agg')  # Use the 'Agg' backend for rendering plots
+matplotlib.use('Agg')  #Agg helps to render plots
 
 import pandas as pd
 from flask import Flask, request, render_template
@@ -11,18 +11,14 @@ import urllib.parse
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-
-# Load the dataset
+#Dummy DataBase
 df = pd.read_csv('StudentsPerformance.csv')
 
-# Calculate the total score and percentage
 df['TotalScore'] = df[['math score', 'reading score', 'writing score']].sum(axis=1)
 df['Percentage'] = df['TotalScore'] / 300 * 100
 
-# Calculate the rank based on the total score
 df['Rank'] = df['TotalScore'].rank(ascending=False, method='min')
 
-# Initialize the Flask application
 app = Flask(__name__)
 
 @app.route('/')
